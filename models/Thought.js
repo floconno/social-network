@@ -16,9 +16,14 @@ const thougthSchema = new Schema({
         type: String,
         required: true,
     },
-    
-})
+    reactions: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Reaction',
+        },
+    ],
+});
 
-const Course = model('course', courseSchema);
+const Thought = model('Thought', thoughtSchema);
 
-module.exports = Course;
+module.exports = Thought;
